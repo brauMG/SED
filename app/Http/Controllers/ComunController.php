@@ -38,7 +38,7 @@ class ComunController extends Controller
             ->select('areas.name as areaName','tests.testId','tests.name as testName','concepts.conceptId','concepts.description', 'tests.startedAt as date')
             ->whereIn('test_concept.testId',$testsId)
             ->get()->toArray();
-        return view('comunes.index',compact('tests','concepts', 'count'));
+        return view('comunes.index',compact('tests','concepts'));
     }
 
     public function test(Request $request, $testId,$conceptId)
